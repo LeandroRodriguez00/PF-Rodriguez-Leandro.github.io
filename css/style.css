@@ -1,0 +1,165 @@
+
+body {
+  background-color: #ea60d8b7;  
+  margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  nav a {
+    color: #fff; 
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .navbar-brand img {
+    border-radius: 50%;
+    max-width: 40px; 
+  }
+
+
+  header {
+    position: relative;
+    height: 620+px; 
+    overflow: hidden;
+  }
+  
+  .fotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+   
+    
+  }
+  .image-container {
+    border: 2px solid #ccc;
+    padding: 10px;
+  }
+  .fotos img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    overflow-x: auto;
+  white-space: nowrap;
+  }
+  
+  .contenedorDeVideo {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .videos {
+    position: relative;
+    width: 100%;
+    border-radius: 40px;
+    box-shadow:auto rgba(0, 0, 0, 0.2);
+  }
+  .videos video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .videos video:focus {
+    outline: none;
+  }
+  h1, h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      background-image: radial-gradient(circle at 50% 150%, #b034bb, #fc4aff, #fb99fd);
+      background-size: 100% 200%;
+      background-position: center top;
+      animation: paintSplatter 10s linear infinite;
+    }
+    @keyframes paintSplatter {
+      0% {
+        background-position: center top;
+      }
+      50% {
+        background-position: center bottom;
+      }
+      100% {
+        background-position: center top;
+      }
+    }
+  .map-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 100px;
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+ .foto1 {
+  width: 500px;
+    height: auto;
+    border-radius: 10px;
+ }
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+input[type="submit"] {
+  background-color: #6c0148;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+input[type="submit"]:hover {
+  background-color: #dc14ff;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.whatsapp-float i {
+  margin-top: 17px;
+}
