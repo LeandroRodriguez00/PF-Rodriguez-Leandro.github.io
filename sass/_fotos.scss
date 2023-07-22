@@ -1,0 +1,26 @@
+.fotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .image-container {
+    border: 2px solid #ccc;
+    padding: 10px;
+  }
+  
+  .fotos img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .foto1 {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+  }

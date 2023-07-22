@@ -1,0 +1,23 @@
+h1, h2 {
+    font-size: $titulos-font-size;
+    font-weight: $titulos-font-weight;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background-image: $titulos-background;
+    background-size: 100% 200%;
+    background-position: center top;
+    animation: paintSplatter 10s linear infinite;
+  }
+  
+  @keyframes paintSplatter {
+    0% {
+      background-position: center top;
+    }
+    50% {
+      background-position: center bottom;
+    }
+    100% {
+      background-position: center top;
+    }
+  }

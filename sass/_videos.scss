@@ -1,0 +1,25 @@
+
+.contenedorDeVideo {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $video-gap;
+  }
+  
+  .videos {
+    position: relative;
+    width: 100%;
+    border-radius: $video-border-radius;
+    box-shadow: auto rgba(0, 0, 0, 0.2);
+  }
+  
+  .videos video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .videos video:focus {
+    outline: none;
+  }
+  
