@@ -3,7 +3,9 @@ form {
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    border-radius: 10px;
+    margin-top: 50px; 
   }
   
   label {
@@ -33,4 +35,22 @@ form {
   input[type="submit"]:hover {
     background-color: #dc14ff;
   }
+
+  .img-fondo {
+    background-image: url(../enlaces/ladovformulario.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f5f5f5; 
+  }
+
+ .img-reservas {
+    background-image: url(../enlaces/ladovReservas.jpg); /* Reemplaza con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #bb2dc8; /* Color de fondo de respaldo para la imagen */
+  }
+  
+ 
   // diseño de formulario
