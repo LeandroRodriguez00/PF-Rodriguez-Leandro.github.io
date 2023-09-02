@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    // Obtener el botón por su ID y agregar un evento de clic
     const verificarButton = document.getElementById("verificarButton");
     verificarButton.addEventListener("click", function () {
       verificarDisponibilidad();
