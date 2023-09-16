@@ -193,6 +193,18 @@ input[type=submit]:hover {
   background-color: #bb2dc8;
 }
 
+#resultado {
+  background-color: #fb99fd;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#resultado:hover {
+  background-color: #fb99fd;
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
