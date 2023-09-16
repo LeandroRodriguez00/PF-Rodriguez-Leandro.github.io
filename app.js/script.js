@@ -16,7 +16,7 @@ function obtenerDatosReserva() {
   cantidadPersonas = parseInt(prompt("Ingrese la cantidad de personas para la reserva:"));
 
   if (isNaN(cantidadPersonas)) {
-    mostrarMensaje("Ingrese un número válido para la cantidad de personas.");
+    alert("Ingrese un número válido para la cantidad de personas.");
     obtenerDatosReserva();
   } else {
     verificarDisponibilidad();
