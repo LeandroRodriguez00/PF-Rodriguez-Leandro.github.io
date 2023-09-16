@@ -1,37 +1,72 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const restaurante = {
-      nombre: "Lado V",
-      mesasTotales: 20,
-      mesasDisponibles: 20,
-    };
-  
-    function verificarDisponibilidad() {
-      let mensaje = restaurante.nombre + "\n";
-      mensaje += "Mesas totales: " + restaurante.mesasTotales + "\n";
-      mensaje += "Mesas disponibles: " + restaurante.mesasDisponibles + "\n";
-  
-      if (restaurante.mesasDisponibles > 0) {
-        mensaje += "Tenemos mesas disponibles, podes realizar una reserva";
+  let nombreCliente;
+let cantidadPersonas;
+const capacidadMaximaRestaurante = 50;
+const porcentajeMaximo = 80;
+
+const reservas = [];
+
+function Reserva(nombre, cantidadPersonas) {
+  this.nombre = nombre;
+  this.cantidadPersonas = cantidadPersonas;
+}
+
+function obtenerDatosReserva() {
+  nombreCliente = prompt("Ingrese su nombre:");
+  cantidadPersonas = parseInt(prompt("Ingrese la cantidad de personas para la reserva:"));
+
+  if (isNaN(cantidadPersonas)) {
+    mostrarMensaje("Ingrese un número válido para la cantidad de personas.");
+    obtenerDatosReserva();
+  } else {
+    verificarDisponibilidad();
+  }
+}
+
+function mostrarMensaje(mensaje) {
+  const resultadoDiv = document.getElementById("resultado");
+  resultadoDiv.textContent = mensaje;
+}
+
+function verificarDisponibilidad() {
+  if (cantidadPersonas <= capacidadMaximaRestaurante * (porcentajeMaximo / 100)) {
+    const nuevaReserva = new Reserva(nombreCliente, cantidadPersonas);
+    reservas.push(nuevaReserva);
+    alert(`Reserva confirmada para ${nombreCliente} para ${cantidadPersonas} personas.`);
+    mostrarMensaje(`Reserva confirmada para ${nombreCliente} para ${cantidadPersonas} personas.`);
+  } else if (cantidadPersonas > capacidadMaximaRestaurante) {
+    alert("La cantidad de personas excede la capacidad máxima del restaurante.");
+  } else {
+    alert("No hay espacio disponible para su reserva.");
+  }
+}
+
+function simularReservaRestaurante() {
+  const simuladorBtn = document.getElementById("simuladorBtn");
+
+  simuladorBtn.addEventListener("click", function() {
+    obtenerDatosReserva();
+
+    if (reservas.length > 0) {
+      const nombreBuscado = prompt("Ingrese el nombre para buscar una reserva:");
+
+      const reservaEncontrada = buscarReservaPorNombre(nombreBuscado);
+
+      if (reservaEncontrada) {
+        mostrarMensaje(`Reserva encontrada para ${reservaEncontrada.nombre} (${reservaEncontrada.cantidadPersonas} personas).`);
       } else {
-        mensaje += "No tenemos mesas disponibles para reservar, pero podes venir sin reserva y anotarte en lista de espera";
+        mostrarMensaje("No se encontró ninguna reserva con ese nombre.");
       }
-     console.log(mensaje)
-      alert(mensaje);
+    } else {
+      mostrarMensaje("No se pudo confirmar ninguna reserva.");
     }
-  
-    function simularReservas() {
-      while (restaurante.mesasDisponibles > 0) {
-        restaurante.mesasDisponibles--;
-        console.log("Mesa reservada. Mesas disponibles: " + restaurante.mesasDisponibles);
-      }
-    }
-  
-    const verificarButton = document.getElementById("verificarButton");
-    verificarButton.addEventListener("click", function () {
-      verificarDisponibilidad();
-      simularReservas();
-      alert("Ha pasado tiempo. Vuelve a verificar la disponibilidad.");
-      console.log ("Ha pasado tiempo. Vuelve a verificar la disponibilidad.");
-    });
   });
-  
+}
+
+function buscarReservaPorNombre(nombre) {
+  const reservaEncontrada = reservas.find((reserva) => reserva.nombre === nombre);
+  return reservaEncontrada;
+}
+
+simularReservaRestaurante();
+});
