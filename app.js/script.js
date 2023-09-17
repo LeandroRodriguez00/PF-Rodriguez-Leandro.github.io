@@ -15,7 +15,7 @@ function obtenerDatosReserva() {
   nombreCliente = prompt("Ingrese su nombre:");
   cantidadPersonas = parseInt(prompt("Ingrese la cantidad de personas para la reserva:"));
 
-  if (isNaN(cantidadPersonas)) {
+  if (isNaN(cantidadPersonas) || cantidadPersonas <= 0) {
     alert("Ingrese un número válido para la cantidad de personas.");
     obtenerDatosReserva();
   } else {
@@ -69,4 +69,21 @@ function buscarReservaPorNombre(nombre) {
 }
 
 simularReservaRestaurante();
+
+const mostrarReservasBtn = document.getElementById("mostrarReservasBtn");
+    mostrarReservasBtn.addEventListener("click", function() {
+        mostrarTodasLasReservas();
+    });
+
+    function mostrarTodasLasReservas() {
+        if (reservas.length > 0) {
+            let mensaje = "Reservas existentes:\n";
+            reservas.forEach(function(reserva) {
+                mensaje += `${reserva.nombre} - ${reserva.cantidadPersonas} personas\n`;
+            });
+            alert(mensaje);
+        } else {
+            alert("No hay reservas existentes.");
+        }
+    }
 });
